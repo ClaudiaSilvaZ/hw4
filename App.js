@@ -76,13 +76,10 @@ export default class App extends React.Component {
   render() {
     let forecast = [];
     for(let i=0; i<5; i++) {
-        let forecastIcon =<Text style={styles.forecastIcon}>{this.state.forecast[i]
-          && (<Icon name={icon(this.state.forecast[i].icon)} size={30} />)}</Text>
-        let forecastTemperature=<Text>{this.state.forecast[i] &&
-          (<Text style={styles.forecastTemperature}>{Math.round(this.state.forecast[i].temperatureHigh)}
-          </Text>)}</Text>
+        let forecastIcon =<Text style={styles.forecastIcon}>{this.state.forecast[i] && (<Icon name={icon(this.state.forecast[i].icon)} size={30} />)}</Text>
+        let forecastTemperature=<Text>{this.state.forecast[i] && (<Text style={styles.forecastTemperature}>{Math.round(this.state.forecast[i].temperatureHigh)}</Text>)}</Text>
       forecast.push(<View style={styles.forecastDay} key={i}>{forecastIcon}{forecastTemperature}</View>)
-}
+    }
     return (
       <View style={styles.container}>
         <View>
@@ -91,9 +88,8 @@ export default class App extends React.Component {
         </View>
         <View style={styles.currentWeather}>
           {/* Current weather conditions */}
-          <Text style={styles.currentIcon}>{this.state.currentIcon &&
-          (<Icon name={icon(this.state.currentIcon)} size={100} color="#000"/>)}</Text>
-          <Text style={styles.locationName}>{this.state.locationName}</Text>
+          <Text style={styles.currentIcon}>{this.state.currentIcon && (<Icon name={icon(this.state.currentIcon)} size={100} color="#000"/>)}</Text>
+          <Text style={styles.locationText}>{this.state.locationName}</Text>
           <Text style={styles.currentTemperature}>{this.state.currentTemperature}</Text>
           <Text style={styles.currentSummary}>{this.state.currentSummary}</Text>
 
